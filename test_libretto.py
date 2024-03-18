@@ -47,6 +47,21 @@ def main():
     print("1", lib.has_voto(nuovo1))
     print("2", lib.has_voto(nuovo2))
 
+    migliorato = lib.crea_migliorato()
+
+    lib.stampa()
+    migliorato.stampa()
+
+    migliorato.stampa()
+
+    ordinato_esame = lib.crea_ordinato_per_esame()
+    ordinato_esame.stampa()
+    print()
+    ordinato_punteggio = lib.crea_ordinato_per_punteggio()
+    ordinato_punteggio.stampa()
+    print()
+    ordinato_esame.cancella_voti_inferiori(27)
+    ordinato_esame.stampa()
 
 
 main()

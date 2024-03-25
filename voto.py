@@ -158,6 +158,15 @@ class Libretto:
             print(v)
         print(f"La media vale {self.media():.2f}")          ## solo due cifre decimali
 
+    def stampaGUI(self):
+        outlList = []
+        outlList.append(f"Hai {len(self._voti)} voti")
+        for v in self._voti:
+            outlList.append(v)
+        outlList.append(f"La media vale {self.media():.2f}")
+        return outlList
+
+
     def cancella_voti_inferiori(self, punteggio):
         """voti_nuovi = []
             for v in self._voti:

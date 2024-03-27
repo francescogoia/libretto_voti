@@ -60,6 +60,9 @@ class View(object):
             self._ddVoto.options.append(ft.dropdown.Option(str(i)))
         self._ddVoto.options.append((ft.dropdown.Option("30 e Lode")))
 
+    def update(self):
+        self._page.update()
+
 
 
 

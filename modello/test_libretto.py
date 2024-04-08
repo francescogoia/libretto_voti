@@ -1,4 +1,4 @@
-from voto import Libretto, Voto
+from modello.voto import Libretto, Voto
 
 lib = Libretto()
 def main():

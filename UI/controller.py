@@ -1,11 +1,11 @@
-from view import View
-from voto import Libretto, Voto
+from UI.view import View
+from modello.voto import Libretto, Voto
 import flet as ft
 
 class Controller(object):
-    def __init__(self, view: View):
+    def __init__(self, view: View, libretto: Libretto):
         self._view = view
-        self._model = Libretto()
+        self._model = libretto
         self.startUpLibretto()
         self._model.stampa()
 

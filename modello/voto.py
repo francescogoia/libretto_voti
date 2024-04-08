@@ -3,7 +3,7 @@ import dataclasses
 import operator
 
 from dataclasses import dataclass, field
-
+from database.voti_dao import VotiDao
 
 @dataclass(order=True)      ## crea i metodi di confronto, che altrimenti non sono creati di default
 class Voto:
@@ -36,6 +36,8 @@ class Voto:
 class Libretto:
     def __init__(self):
         self._voti = []
+        self._voti_dao = VotiDao()
+
 
     @property
     def voti(self):
@@ -160,10 +162,16 @@ class Libretto:
 
     def stampaGUI(self):
         outlList = []
+        """
         outlList.append(f"Hai {len(self._voti)} voti")
         for v in self._voti:
             outlList.append(v)
         outlList.append(f"La media vale {self.media():.2f}")
+        """
+        voti = self._voti_dao.get_voti()
+        for v in voti:
+            outlList.append(v)
+
         return outlList
 
 

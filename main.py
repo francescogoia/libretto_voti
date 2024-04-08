@@ -1,11 +1,13 @@
 import flet as ft
-from view import View
-from controller import Controller
+from UI.view import View
+from UI.controller import Controller
+from modello.voto import Libretto
 
 
 def main(page: ft.page):
     v = View(page)
-    c = Controller(v)
+    l = Libretto()
+    c = Controller(v, l)
     v.setController(c)
     v.caricaInterfaccia()
 

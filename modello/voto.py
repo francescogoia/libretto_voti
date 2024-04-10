@@ -45,8 +45,11 @@ class Libretto:
     def append(self, voto):
         if self.has_voto(voto) == False and self.has_conflitto(voto) == False:
             self._voti.append(voto)
+            self._voti_dao.add_voti(voto)
         else:
             raise ValueError("Voto non valido")
+
+
     def media(self):
         if len(self._voti)==0:
             raise ValueError("Elenco voti vuoto")
